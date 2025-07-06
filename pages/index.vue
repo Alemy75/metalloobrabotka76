@@ -19,7 +19,7 @@ const swiper = useSwiper(containerRef)
 
 <template>
   <!-- Hero -->
-  <div class="h-[calc(100vh-56px)] relative">
+  <div class="h-[calc(100vh-56px)] relative bg-gradient-to-br from-secondary/80 to-primary/80">
     <div
       class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/80 to-primary/80 z-10"
     >
@@ -42,7 +42,7 @@ const swiper = useSwiper(containerRef)
       autoplay-delay="2000"
       ref="containerRef"
       :speed="2000"
-      class="h-full pointer-events-none"
+      class="h-full pointer-events-none z-0"
     >
       <swiper-slide v-for="(slide, idx) in slides" :key="idx">
         <img class="object-cover h-full w-full" :src="slide.img" alt="machines" />
