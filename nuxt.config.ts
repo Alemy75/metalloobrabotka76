@@ -5,10 +5,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-
   vite: {
     plugins: [tailwindcss()],
   },
-
-  modules: ['nuxt-swiper'],
+  app: {
+    baseURL: '/metal-gena/',
+    buildAssetsDir: '/assets/',
+  },
+  modules: ['nuxt-swiper', 'nuxt-lucide-icons'],
 })

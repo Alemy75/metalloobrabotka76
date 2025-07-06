@@ -7,15 +7,20 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "pages": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "nuxt": "^3.17.6",
+    "nuxt-lucide-icons": "^1.0.5",
     "nuxt-swiper": "^2.0.1",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.11",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
