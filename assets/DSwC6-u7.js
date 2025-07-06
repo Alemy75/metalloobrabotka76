@@ -1,1 +1,0 @@
-import{_ as o,x as t,y as s,O as n}from"./BWMgJMti.js";const _={},c={class:"w-[1280px] mx-auto max-xl:w-full max-xl:px-4"};function a(e,r){return s(),t("div",c,[n(e.$slots,"default")])}const x=o(_,[["render",a]]);export{x as _};
