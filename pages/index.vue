@@ -4,6 +4,26 @@ import m2 from '~/assets/img/machines-2.webp'
 import m3 from '~/assets/img/machines-3.webp'
 import m4 from '~/assets/img/machines-4.webp'
 import m5 from '~/assets/img/machines-5.webp'
+import emailjs from '@emailjs/browser'
+
+const SERVICE_ID = 'service_m2he2vq'
+const TEMPLATE_ID = 'template_udlktxj'
+const PUBLIC_KEY = 'EtjJQWA6i4tDaKmU3'
+
+const formFields = reactive({
+  email: '',
+  name: '',
+  message: '',
+  phone: '',
+  personalData: false,
+})
+
+const isFormEnabled = computed(() => {
+  return (
+    formFields.personalData &&
+    [formFields.email, formFields.name, formFields.phone, formFields.message].every(e => e.length)
+  )
+})
 
 const containerRef = ref(null)
 const slides = ref([
@@ -14,7 +34,27 @@ const slides = ref([
   { id: 5, img: m5 },
 ])
 
-const swiper = useSwiper(containerRef)
+
+function submitForm(event: Event) {
+  emailjs
+    .sendForm(SERVICE_ID, TEMPLATE_ID, '#email-send-form', {
+      publicKey: PUBLIC_KEY,
+    })
+    .then(
+      () => {
+        alert('Сообщение отправлено!')
+      },
+      error => {
+        console.error(error)
+      }
+    )
+}
+
+onBeforeMount(() => {
+  emailjs.init({
+    publicKey: PUBLIC_KEY,
+  })
+})
 </script>
 
 <template>
@@ -173,6 +213,75 @@ const swiper = useSwiper(containerRef)
           </span>
         </li>
       </ul>
+    </Container>
+  </div>
+
+  <!-- Form -->
+  <div class="py-10">
+    <Container>
+      <form
+        id="email-send-form"
+        @submit.prevent="submitForm"
+        class="rounded-2xl flex flex-col gap-4"
+      >
+        <h2 class="text-2xl font-bold text-foreground mb-4">Оставьте заявку</h2>
+
+        <input type="hidden" name="time" :value="new Date()" />
+
+        <input
+          v-model="formFields.name"
+          type="text"
+          name="name"
+          placeholder="Ваше имя"
+          class="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-white"
+          required
+        />
+
+        <input
+          v-model="formFields.email"
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-white"
+          required
+        />
+
+        <input
+          v-model="formFields.phone"
+          type="phone"
+          name="phone"
+          placeholder="Телефон"
+          class="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-white"
+        />
+
+        <textarea
+          v-model="formFields.message"
+          name="message"
+          rows="4"
+          placeholder="Комментарий"
+          class="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-white resize-none"
+          required
+        ></textarea>
+
+        <label class="flex items-start gap-2 text-sm text-foreground">
+          <input
+            v-model="formFields.personalData"
+            type="checkbox"
+            name="consent"
+            required
+            class="mt-1 accent-primary"
+          />
+          <span>Я согласен на обработку персональных данных</span>
+        </label>
+
+        <button
+          :disabled="!isFormEnabled"
+          type="submit"
+          class="mt-4 py-3 px-6 rounded-xl cursor-pointer bg-primary text-white font-semibold hover:bg-primary/90 active:bg-primary/70 transition-all duration-150 disabled:opacity-50"
+        >
+          Отправить
+        </button>
+      </form>
     </Container>
   </div>
 </template>

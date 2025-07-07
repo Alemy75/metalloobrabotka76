@@ -15,7 +15,7 @@ import WhatsApp from '~/assets/img/whatsapp-icon.svg'
     </div>
 
     <!-- Footer -->
-    <footer class="py-10 px-6 md:px-12">
+    <footer class="py-10 bg-surface">
       <Container>
         <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Контакты -->
