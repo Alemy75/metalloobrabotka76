@@ -98,7 +98,7 @@ onBeforeMount(() => {
 
           <a
             href="#section-form"
-            class="mt-4 py-4 px-6 max-w-[200px] flex justify-center rounded-xl cursor-pointer font-semibold transition-all duration-150 disabled:opacity-50 relative text-background overflow-hidden bg-secondary group"
+            class="mt-4 py-4 px-6 max-w-[200px] max-lg:max-w-full flex justify-center rounded-xl cursor-pointer font-semibold transition-all duration-150 disabled:opacity-50 relative text-background overflow-hidden bg-secondary group"
           >
             <div
               class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
