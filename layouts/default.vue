@@ -5,8 +5,12 @@ import WhatsApp from '~/assets/img/whatsapp-icon.svg'
 <template>
   <div>
     <div class="h-14 border-b border-b-primary">
-      <Container class="h-full flex items-center">
-        <h1 class="text-primary text-2xl">+7 (903) 826-52-41</h1>
+      <Container class="h-full flex items-center gap-4 justify-between">
+        <h1 class="text-primary">Метлообработка в г. Ярославль</h1>
+
+        <span class="flex items-center gap-4">
+          <a href="#section-contacts" class="text-primary hover:underline">Контакты</a>
+        </span>
       </Container>
     </div>
 
@@ -15,7 +19,7 @@ import WhatsApp from '~/assets/img/whatsapp-icon.svg'
     </div>
 
     <!-- Footer -->
-    <footer class="py-10 bg-surface">
+    <footer id="section-contacts" class="py-10 bg-surface">
       <Container>
         <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Контакты -->

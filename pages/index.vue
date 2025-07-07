@@ -95,6 +95,16 @@ onBeforeMount(() => {
             работают опытные специалисты, и мы используем современное оборудование. Мы гарантируем
             высокое качество нашей работы и выполняем заказы любой сложности быстро и эффективно.
           </p>
+
+          <a
+            href="#section-form"
+            class="mt-4 py-4 px-6 max-w-[200px] flex justify-center rounded-xl cursor-pointer font-semibold transition-all duration-150 disabled:opacity-50 relative text-background overflow-hidden bg-secondary group"
+          >
+            <div
+              class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
+            ></div>
+            Оставить заявку
+          </a>
         </div>
       </Container>
     </div>
@@ -256,7 +266,7 @@ onBeforeMount(() => {
           type="text"
           name="name"
           placeholder="Ваше имя"
-          class="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-white"
+          class="px-4 py-3 border border-foreground/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-background"
           required
         />
 
@@ -265,7 +275,7 @@ onBeforeMount(() => {
           type="email"
           name="email"
           placeholder="Email"
-          class="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-white"
+          class="px-4 py-3 border border-foreground/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-background"
           required
         />
 
@@ -274,7 +284,7 @@ onBeforeMount(() => {
           type="phone"
           name="phone"
           placeholder="Телефон"
-          class="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-white"
+          class="px-4 py-3 border border-foreground/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-background"
         />
 
         <textarea
@@ -282,7 +292,7 @@ onBeforeMount(() => {
           name="message"
           rows="4"
           placeholder="Комментарий"
-          class="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-white resize-none"
+          class="px-4 py-3 border border-foreground/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-background resize-none"
           required
         ></textarea>
 
@@ -300,8 +310,11 @@ onBeforeMount(() => {
         <button
           :disabled="!isFormEnabled"
           type="submit"
-          class="mt-4 py-3 px-6 rounded-xl cursor-pointer bg-primary text-white font-semibold hover:bg-primary/90 active:bg-primary/70 transition-all duration-150 disabled:opacity-50"
+          class="mt-4 py-4 px-6 rounded-xl cursor-pointer bg-primary text-background font-semibold hover:bg-primary/90 active:bg-primary/70 transition-all duration-150 disabled:opacity-50 relative overflow-hidden"
         >
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
+          ></div>
           Отправить
         </button>
       </form>
