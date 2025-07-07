@@ -6,6 +6,27 @@ import m4 from '~/assets/img/machines-4.webp'
 import m5 from '~/assets/img/machines-5.webp'
 import emailjs from '@emailjs/browser'
 
+// Meta
+useHead({
+  title: 'Металообработка | Ярослвль',
+  meta: [
+    { name: 'description', content: 'Полный спектр услуг обработки металла' },
+    { name: 'keywords', content: 'металообработка' },
+    { name: 'author', content: 'ООО "Лазер"' },
+    { name: 'robots', content: 'index, follow' },
+    { property: 'og:title', content: 'Металообработка в Ярославле' },
+    { property: 'og:description', content: 'Полный спектр услуг обработки металла' },
+    { property: 'og:type', content: 'website' },
+    // { property: 'og:image', content: 'https://yourdomain.com/preview.jpg' },
+    // { property: 'og:url', content: 'https://yourdomain.com/' },
+    // { name: 'twitter:card', content: 'summary_large_image' },
+    // { name: 'twitter:title', content: 'Создание сайтов под ключ — Веб-студия XYZ' },
+    // { name: 'twitter:description', content: 'Адаптивные сайты с SEO и дизайном.' },
+    // { name: 'twitter:image', content: 'https://yourdomain.com/preview.jpg' },
+  ],
+  // link: [{ rel: 'canonical', href: 'https://yourdomain.com/' }],
+})
+
 const SERVICE_ID = 'service_m2he2vq'
 const TEMPLATE_ID = 'template_udlktxj'
 const PUBLIC_KEY = 'EtjJQWA6i4tDaKmU3'
@@ -34,7 +55,6 @@ const slides = ref([
   { id: 5, img: m5 },
 ])
 
-
 function submitForm(event: Event) {
   emailjs
     .sendForm(SERVICE_ID, TEMPLATE_ID, '#email-send-form', {
@@ -59,7 +79,9 @@ onBeforeMount(() => {
 
 <template>
   <!-- Hero -->
-  <div class="h-[calc(100vh-56px)] relative bg-gradient-to-br from-secondary/80 to-primary/80">
+  <div
+    class="h-[calc(100vh-56px)] relative bg-gradient-to-br from-secondary/80 to-primary/80 overflow-hidden"
+  >
     <div
       class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/80 to-primary/80 z-10"
     >
@@ -180,6 +202,7 @@ onBeforeMount(() => {
         </a>
 
         <a
+          href="#section-form"
           class="gap-4 flex flex-col items-center px-4 py-8 rounded-2xl bg-background border-2 border-primary/10 hover:border-secondary/50 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
         >
           <LucideFormInput :size="40" class="text-secondary" />
@@ -217,7 +240,7 @@ onBeforeMount(() => {
   </div>
 
   <!-- Form -->
-  <div class="py-10">
+  <div id="section-form" class="py-10">
     <Container>
       <form
         id="email-send-form"

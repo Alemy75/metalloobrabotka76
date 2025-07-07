@@ -6,7 +6,7 @@ import WhatsApp from '~/assets/img/whatsapp-icon.svg'
   <div>
     <div class="h-14 border-b border-b-primary">
       <Container class="h-full flex items-center">
-        <h1 class="text-primary text-2xl">Металообработка</h1>
+        <h1 class="text-primary text-2xl">+7 (903) 826-52-41</h1>
       </Container>
     </div>
 
