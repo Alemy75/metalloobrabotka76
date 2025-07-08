@@ -314,7 +314,7 @@ onBeforeMount(() => {
         <button
           :disabled="!isFormEnabled"
           type="submit"
-          class="mt-4 py-4 px-6 rounded-xl cursor-pointer bg-primary text-background font-semibold hover:bg-primary/90 active:bg-primary/70 transition-all duration-150 disabled:opacity-50 relative overflow-hidden"
+          class="mt-4 py-4 px-6 rounded-xl cursor-pointer bg-primary text-background font-semibold hover:bg-primary/90 active:bg-primary/70 transition-all duration-150 disabled:opacity-50 relative overflow-hidden disabled:pointer-events-none"
         >
           <div
             class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
