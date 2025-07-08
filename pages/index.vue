@@ -296,7 +296,7 @@ onBeforeMount(() => {
           required
         ></textarea>
 
-        <label class="flex items-start gap-2 text-sm text-foreground">
+        <!-- <label class="flex items-start gap-2 text-sm text-foreground">
           <input
             v-model="formFields.personalData"
             type="checkbox"
@@ -305,7 +305,11 @@ onBeforeMount(() => {
             class="mt-1 accent-primary"
           />
           <span>Я согласен на обработку персональных данных</span>
-        </label>
+        </label> -->
+
+        <MCheckbox v-model="formFields.personalData" required>
+          Я согласен на обработку персональных данных
+        </MCheckbox>
 
         <button
           :disabled="!isFormEnabled"
