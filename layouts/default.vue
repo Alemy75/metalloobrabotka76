@@ -4,7 +4,7 @@ import WhatsApp from '~/assets/img/whatsapp-icon.svg'
 
 <template>
   <div>
-    <div class="h-14 border-b border-b-primary">
+    <div class="h-14 border-b-2 border-surface">
       <Container class="h-full flex items-center gap-4 justify-between">
         <h1 class="text-primary">Метлообработка в г. Ярославль</h1>
 

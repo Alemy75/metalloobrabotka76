@@ -149,6 +149,18 @@ onBeforeMount(() => {
         высочайшего качества.
       </p>
 
+      <div class="flex justify-center mt-10">
+        <NuxtLink
+          to="/services"
+          class="py-4 px-6 max-w-[200px] max-lg:max-w-full flex justify-center rounded-xl cursor-pointer font-semibold transition-all duration-150 disabled:opacity-50 relative text-background overflow-hidden bg-primary group"
+        >
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
+          ></div>
+          Перейти к услугам
+        </NuxtLink>
+      </div>
+
       <div class="mt-10 relative border-2 border-primary max-w-[640px] mx-auto max-sm:mx-5">
         <button
           class="w-10 h-10 rounded-full bg-primary absolute top-1/2 left-0 translate-y-[-50%] translate-x-[-50%] text-background z-10 flex items-center justify-center cursor-pointer overflow-hidden group"
