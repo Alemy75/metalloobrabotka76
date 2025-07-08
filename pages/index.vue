@@ -4,9 +4,19 @@ import m2 from '~/assets/img/machines-2.webp'
 import m3 from '~/assets/img/machines-3.webp'
 import m4 from '~/assets/img/machines-4.webp'
 import m5 from '~/assets/img/machines-5.webp'
+import b1 from '~/assets/img/bench-1.webp'
+import b2 from '~/assets/img/bench-2.webp'
+import b3 from '~/assets/img/bench-3.webp'
+import b4 from '~/assets/img/bench-4.webp'
+import b5 from '~/assets/img/bench-5.webp'
+import b6 from '~/assets/img/bench-6.webp'
+import b7 from '~/assets/img/bench-7.webp'
+import b8 from '~/assets/img/bench-8.webp'
+import b9 from '~/assets/img/bench-9.webp'
+
 import emailjs from '@emailjs/browser'
 
-// Meta
+/* Meat */
 useHead({
   title: 'Металообработка | Ярослвль',
   meta: [
@@ -17,19 +27,35 @@ useHead({
     { property: 'og:title', content: 'Металообработка в Ярославле' },
     { property: 'og:description', content: 'Полный спектр услуг обработки металла' },
     { property: 'og:type', content: 'website' },
-    // { property: 'og:image', content: 'https://yourdomain.com/preview.jpg' },
-    // { property: 'og:url', content: 'https://yourdomain.com/' },
-    // { name: 'twitter:card', content: 'summary_large_image' },
-    // { name: 'twitter:title', content: 'Создание сайтов под ключ — Веб-студия XYZ' },
-    // { name: 'twitter:description', content: 'Адаптивные сайты с SEO и дизайном.' },
-    // { name: 'twitter:image', content: 'https://yourdomain.com/preview.jpg' },
   ],
-  // link: [{ rel: 'canonical', href: 'https://yourdomain.com/' }],
 })
 
+/* Consts */
 const SERVICE_ID = 'service_m2he2vq'
 const TEMPLATE_ID = 'template_udlktxj'
 const PUBLIC_KEY = 'EtjJQWA6i4tDaKmU3'
+const HERO_SLIDES = [
+  { id: 1, img: m1 },
+  { id: 2, img: m2 },
+  { id: 3, img: m3 },
+  { id: 4, img: m4 },
+  { id: 5, img: m5 },
+]
+
+const ABOUT_SLIDES = [
+  { id: 1, img: b1 },
+  { id: 2, img: b2 },
+  { id: 3, img: b3 },
+  { id: 4, img: b4 },
+  { id: 5, img: b5 },
+  { id: 6, img: b6 },
+  { id: 7, img: b7 },
+  { id: 8, img: b8 },
+  { id: 9, img: b9 },
+]
+
+const aboutSwiperRef = ref()
+const aboutSwiper = useSwiper(aboutSwiperRef)
 
 const formFields = reactive({
   email: '',
@@ -46,16 +72,7 @@ const isFormEnabled = computed(() => {
   )
 })
 
-const containerRef = ref(null)
-const slides = ref([
-  { id: 1, img: m1 },
-  { id: 2, img: m2 },
-  { id: 3, img: m3 },
-  { id: 4, img: m4 },
-  { id: 5, img: m5 },
-])
-
-function submitForm(event: Event) {
+function submitForm() {
   emailjs
     .sendForm(SERVICE_ID, TEMPLATE_ID, '#email-send-form', {
       publicKey: PUBLIC_KEY,
@@ -112,11 +129,10 @@ onBeforeMount(() => {
     <swiper-container
       :loop="true"
       autoplay-delay="2000"
-      ref="containerRef"
       :speed="2000"
       class="h-full pointer-events-none z-0"
     >
-      <swiper-slide v-for="(slide, idx) in slides" :key="idx">
+      <swiper-slide v-for="(slide, idx) in HERO_SLIDES" :key="idx">
         <img class="object-cover h-full w-full" :src="slide.img" alt="machines" />
       </swiper-slide>
     </swiper-container>
@@ -132,16 +148,58 @@ onBeforeMount(() => {
         работаем над улучшением наших процессов и технологий, чтобы предоставлять вам продукцию
         высочайшего качества.
       </p>
+
+      <div class="mt-10 relative border-2 border-primary max-w-[640px] mx-auto max-sm:mx-5">
+        <button
+          class="w-10 h-10 rounded-full bg-primary absolute top-1/2 left-0 translate-y-[-50%] translate-x-[-50%] text-background z-10 flex items-center justify-center cursor-pointer overflow-hidden group"
+          @click="aboutSwiper.prev()"
+        >
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
+          ></div>
+          <LucideChevronLeft />
+        </button>
+
+        <button
+          class="w-10 h-10 rounded-full bg-primary absolute top-1/2 right-0 translate-y-[-50%] translate-x-[50%] text-background z-10 flex items-center justify-center cursor-pointer overflow-hidden group"
+          @click="aboutSwiper.next()"
+        >
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
+          ></div>
+          <LucideChevronRight />
+        </button>
+
+        <swiper-container
+          ref="aboutSwiperRef"
+          :loop="true"
+          autoplay-delay="5000"
+          :speed="500"
+          class="h-full"
+        >
+          <swiper-slide v-for="(slide, idx) in ABOUT_SLIDES" :key="idx">
+            <img class="object-cover w-full" :src="slide.img" alt="machines" />
+          </swiper-slide>
+        </swiper-container>
+      </div>
+
+      <div class="mt-4 flex justify-center">
+        <span class="flex items-center gap-2">
+          <div
+            v-for="(slide, idx) in ABOUT_SLIDES"
+            :key="idx"
+            class="w-2 h-2 rounded-full bg-primary/50 cursor-pointer transition duration-150"
+            :class="{ 'bg-primary/100': aboutSwiper.activeIndex.value === idx }"
+            @click="aboutSwiper.to(idx)"
+          ></div>
+        </span>
+      </div>
     </Container>
   </div>
   <!-- Ship -->
   <div>
     <Container class="py-10">
       <h2 class="text-2xl font-bold w-full text-center">Варианты доставки</h2>
-
-      <!-- <p class="mt-10 text-center opacity-50">
-        Мы предлагаем два удобных способа получения вашего заказа:
-      </p> -->
 
       <div class="grid grid-cols-2 gap-4 mt-10 max-lg:grid-cols-1">
         <div class="flex flex-col gap-4 items-center">
