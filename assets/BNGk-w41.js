@@ -1,1 +1,0 @@
-import{_ as o,x as s,y as t,S as n}from"./rugNP2PY.js";const _={},a={class:"w-[1280px] mx-auto max-xl:w-full max-xl:px-12 max-sm:px-4"};function c(e,r){return t(),s("div",a,[n(e.$slots,"default")])}const l=o(_,[["render",c]]);export{l as _};
