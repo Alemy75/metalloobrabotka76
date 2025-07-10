@@ -31,9 +31,10 @@ useHead({
 })
 
 /* Consts */
-const SERVICE_ID = 'service_m2he2vq'
-const TEMPLATE_ID = 'template_udlktxj'
-const PUBLIC_KEY = 'EtjJQWA6i4tDaKmU3'
+const SERVICE_ID = 'service_dsl8mnn'
+const TEMPLATE_ID = 'template_c7vus8j'
+const PUBLIC_KEY = 'riBBNhcORYSnk6fcf'
+
 const HERO_SLIDES = [
   { id: 1, img: m1 },
   { id: 2, img: m2 },
