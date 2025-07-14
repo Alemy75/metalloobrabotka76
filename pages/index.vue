@@ -28,6 +28,7 @@ useHead({
     { property: 'og:description', content: 'Полный спектр услуг обработки металла' },
     { property: 'og:type', content: 'website' },
   ],
+  link: [{ rel: 'icon', type: 'image/png', href: '/favicon.svg' }],
 })
 
 /* Consts */
@@ -98,14 +99,14 @@ onBeforeMount(() => {
 <template>
   <!-- Hero -->
   <div
-    class="h-[calc(100vh-56px)] relative bg-gradient-to-br from-secondary/80 to-primary/80 overflow-hidden"
+    class="from-secondary/80 to-primary/80 relative mt-14 h-[calc(100vh-56px)] overflow-hidden bg-gradient-to-br"
   >
     <div
-      class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/80 to-primary/80 z-10"
+      class="from-secondary/80 to-primary/80 absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-br"
     >
-      <Container class="h-full flex items-center">
-        <div class="w-1/2 max-lg:w-full flex justify-center flex-col max-lg:text-center">
-          <h2 class="text-5xl max-lg:text-3xl uppercase font-bold text-background">
+      <Container class="flex h-full items-center">
+        <div class="flex w-1/2 flex-col justify-center max-lg:w-full max-lg:text-center">
+          <h2 class="text-background text-5xl font-bold uppercase max-lg:text-3xl">
             Металообработка
           </h2>
           <p class="text-background mt-4">
@@ -116,10 +117,10 @@ onBeforeMount(() => {
 
           <a
             href="#section-form"
-            class="mt-4 py-4 px-6 max-w-[200px] max-lg:max-w-full flex justify-center rounded-xl cursor-pointer font-semibold transition-all duration-150 disabled:opacity-50 relative text-background overflow-hidden bg-secondary group"
+            class="text-background bg-secondary group relative mt-4 flex max-w-[200px] cursor-pointer justify-center overflow-hidden rounded-xl px-6 py-4 font-semibold transition-all duration-150 disabled:opacity-50 max-lg:max-w-full"
           >
             <div
-              class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
+              class="group-hover:bg-background/20 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40 absolute top-0 right-0 bottom-0 left-0 transition-all duration-150"
             ></div>
             Оставить заявку
           </a>
@@ -129,19 +130,19 @@ onBeforeMount(() => {
 
     <swiper-container
       :loop="true"
-      autoplay-delay="2000"
+      autoplay-delay="10000"
       :speed="2000"
-      class="h-full pointer-events-none z-0"
+      class="pointer-events-none z-0 h-full"
     >
       <swiper-slide v-for="(slide, idx) in HERO_SLIDES" :key="idx">
-        <img class="object-cover h-full w-full" :src="slide.img" alt="machines" />
+        <img class="h-full w-full object-cover" :src="slide.img" alt="machines" />
       </swiper-slide>
     </swiper-container>
   </div>
   <!-- About -->
   <div class="bg-surface">
     <Container class="py-10">
-      <h2 class="text-2xl font-bold w-full text-center">Технологическая компания</h2>
+      <h2 class="w-full text-center text-2xl font-bold">Технологическая компания</h2>
 
       <p class="mt-10">
         Мы предлагаем услуги по металлообработке деталей, опираясь на многолетний опыт нашей команды
@@ -150,75 +151,74 @@ onBeforeMount(() => {
         высочайшего качества.
       </p>
 
-      <div class="flex justify-center mt-10">
-        <NuxtLink
-          to="/services"
-          class="py-4 px-6 max-w-[200px] max-lg:max-w-full flex justify-center rounded-xl cursor-pointer font-semibold transition-all duration-150 disabled:opacity-50 relative text-background overflow-hidden bg-primary group"
-        >
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
-          ></div>
-          Перейти к услугам
-        </NuxtLink>
-      </div>
+      <div class="mt-10">
+        <div class="border-primary relative mx-auto border-2 max-sm:mx-5">
+          <button
+            class="bg-primary text-background group absolute top-1/2 left-0 z-10 flex h-10 w-10 translate-x-[-50%] translate-y-[-50%] cursor-pointer items-center justify-center overflow-hidden rounded-full"
+            @click="aboutSwiper.prev()"
+          >
+            <div
+              class="group-hover:bg-background/20 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40 absolute top-0 right-0 bottom-0 left-0 transition-all duration-150"
+            ></div>
+            <LucideChevronLeft />
+          </button>
 
-      <div class="mt-10 relative border-2 border-primary max-w-[640px] mx-auto max-sm:mx-5">
-        <button
-          class="w-10 h-10 rounded-full bg-primary absolute top-1/2 left-0 translate-y-[-50%] translate-x-[-50%] text-background z-10 flex items-center justify-center cursor-pointer overflow-hidden group"
-          @click="aboutSwiper.prev()"
-        >
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
-          ></div>
-          <LucideChevronLeft />
-        </button>
+          <button
+            class="bg-primary text-background group absolute top-1/2 right-0 z-10 flex h-10 w-10 translate-x-[50%] translate-y-[-50%] cursor-pointer items-center justify-center overflow-hidden rounded-full"
+            @click="aboutSwiper.next()"
+          >
+            <div
+              class="group-hover:bg-background/20 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40 absolute top-0 right-0 bottom-0 left-0 transition-all duration-150"
+            ></div>
+            <LucideChevronRight />
+          </button>
 
-        <button
-          class="w-10 h-10 rounded-full bg-primary absolute top-1/2 right-0 translate-y-[-50%] translate-x-[50%] text-background z-10 flex items-center justify-center cursor-pointer overflow-hidden group"
-          @click="aboutSwiper.next()"
-        >
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
-          ></div>
-          <LucideChevronRight />
-        </button>
+          <swiper-container
+            ref="aboutSwiperRef"
+            :loop="true"
+            autoplay-delay="5000"
+            :speed="500"
+            class="h-full"
+          >
+            <swiper-slide v-for="(slide, idx) in ABOUT_SLIDES" :key="idx">
+              <img class="w-full object-cover" :src="slide.img" alt="machines" />
+            </swiper-slide>
+          </swiper-container>
+        </div>
 
-        <swiper-container
-          ref="aboutSwiperRef"
-          :loop="true"
-          autoplay-delay="5000"
-          :speed="500"
-          class="h-full"
-        >
-          <swiper-slide v-for="(slide, idx) in ABOUT_SLIDES" :key="idx">
-            <img class="object-cover w-full" :src="slide.img" alt="machines" />
-          </swiper-slide>
-        </swiper-container>
-      </div>
-
-      <div class="mt-4 flex justify-center">
-        <span class="flex items-center gap-2">
-          <div
-            v-for="(slide, idx) in ABOUT_SLIDES"
-            :key="idx"
-            class="w-2 h-2 rounded-full bg-primary/50 cursor-pointer transition duration-150"
-            :class="{ 'bg-primary/100': aboutSwiper.activeIndex.value === idx }"
-            @click="aboutSwiper.to(idx)"
-          ></div>
-        </span>
+        <div class="mt-4 flex justify-center">
+          <span class="flex items-center gap-2">
+            <div
+              v-for="(slide, idx) in ABOUT_SLIDES"
+              :key="idx"
+              class="bg-primary/50 h-2 w-2 cursor-pointer rounded-full transition duration-150"
+              :class="{ 'bg-primary/100': aboutSwiper.activeIndex.value === idx }"
+              @click="aboutSwiper.to(idx)"
+            ></div>
+          </span>
+        </div>
       </div>
     </Container>
   </div>
-  <!-- Ship -->
-  <div>
-    <Container class="py-10">
-      <h2 class="text-2xl font-bold w-full text-center">Варианты доставки</h2>
 
-      <div class="grid grid-cols-2 gap-4 mt-10 max-lg:grid-cols-1">
-        <div class="flex flex-col gap-4 items-center">
+  <div class="border-b-foreground/2 border-b-0">
+    <Container class="py-10">
+      <h2 class="w-full text-center text-2xl font-bold">Наши услуги</h2>
+
+      <MServices />
+    </Container>
+  </div>
+
+  <!-- Ship -->
+  <div class="bg-surface">
+    <Container class="py-10">
+      <h2 class="w-full text-center text-2xl font-bold">Варианты доставки</h2>
+
+      <div class="mt-10 grid grid-cols-2 gap-4 max-lg:grid-cols-1">
+        <div class="flex flex-col items-center gap-4">
           <LucideUser :size="40" class="text-secondary" />
 
-          <h3 class="text-primary font-semibold uppercase text-center">
+          <h3 class="text-primary text-center font-semibold uppercase">
             Самовывоз со склада в Ярославле
           </h3>
           Вы можете забрать заказ самостоятельно с нашего склада по адресу: г. Ярославль, Троицкий
@@ -227,10 +227,10 @@ onBeforeMount(() => {
           менеджера.
         </div>
 
-        <div class="gap-4 flex flex-col items-center">
+        <div class="flex flex-col items-center gap-4">
           <LucideTruck :size="40" class="text-secondary" />
 
-          <h3 class="text-primary font-semibold uppercase text-center">
+          <h3 class="text-primary text-center font-semibold uppercase">
             Доставка через транспортную компанию
           </h3>
           Мы бесплатно доставим ваш заказ до выбранной вами транспортной компании. Далее вы
@@ -242,11 +242,11 @@ onBeforeMount(() => {
     </Container>
   </div>
   <!-- Pay -->
-  <div class="bg-surface">
+  <div>
     <Container class="py-10">
-      <h2 class="text-2xl font-bold w-full text-center">Оплата заказа</h2>
+      <h2 class="w-full text-center text-2xl font-bold">Оплата заказа</h2>
 
-      <p class="mt-10 text-primary uppercase font-semibold border-l-2 border-secondary pl-4">
+      <p class="text-primary border-secondary mt-10 border-l-2 pl-4 font-semibold uppercase">
         Получение счёта
       </p>
 
@@ -255,15 +255,15 @@ onBeforeMount(() => {
         нами любым удобным способом:
       </p>
 
-      <div class="grid grid-cols-3 gap-4 mt-4 max-lg:grid-cols-1">
+      <div class="mt-4 grid grid-cols-3 gap-4 max-lg:grid-cols-1">
         <a
           href="tel:84852737088"
           title="8 (4852) 73-70-88"
-          class="gap-4 flex flex-col items-center px-4 py-8 rounded-2xl bg-background border-2 border-primary/10 hover:border-secondary/50 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
+          class="bg-background border-primary/10 hover:border-secondary/50 flex flex-col items-center gap-4 rounded-2xl border-2 px-4 py-8 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
         >
           <LucidePhoneCall :size="40" class="text-secondary" />
 
-          <div class="text-primary font-semibold uppercase text-center">
+          <div class="text-primary text-center font-semibold uppercase">
             Позвоните в офис
             <div class="text-secondary">ООО"Лазер"</div>
           </div>
@@ -272,11 +272,11 @@ onBeforeMount(() => {
         <a
           href="mailto:L737088@yandex.ru"
           title="L737088@yandex.ru"
-          class="gap-4 flex flex-col items-center px-4 py-8 rounded-2xl bg-background border-2 border-primary/10 hover:border-secondary/50 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
+          class="bg-background border-primary/10 hover:border-secondary/50 flex flex-col items-center gap-4 rounded-2xl border-2 px-4 py-8 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
         >
           <LucideMail :size="40" class="text-secondary" />
 
-          <div class="text-primary font-semibold uppercase text-center">
+          <div class="text-primary text-center font-semibold uppercase">
             Напишите нам на
             <div class="text-secondary">электронную почту</div>
           </div>
@@ -284,11 +284,11 @@ onBeforeMount(() => {
 
         <a
           href="#section-form"
-          class="gap-4 flex flex-col items-center px-4 py-8 rounded-2xl bg-background border-2 border-primary/10 hover:border-secondary/50 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
+          class="bg-background border-primary/10 hover:border-secondary/50 flex flex-col items-center gap-4 rounded-2xl border-2 px-4 py-8 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
         >
           <LucideFormInput :size="40" class="text-secondary" />
 
-          <div class="text-primary font-semibold uppercase text-center">
+          <div class="text-primary text-center font-semibold uppercase">
             Воспользуйтесь
             <div class="text-secondary">формой обратной связи</div>
             на нашем сайте
@@ -296,11 +296,11 @@ onBeforeMount(() => {
         </a>
       </div>
 
-      <p class="mt-10 text-primary uppercase font-semibold border-l-2 border-secondary pl-4">
+      <p class="text-primary border-secondary mt-10 border-l-2 pl-4 font-semibold uppercase">
         Условия оплаты
       </p>
 
-      <ul class="mt-4 p-8 bg-background border-primary/10 border-2 rounded-2xl">
+      <ul class="bg-background border-primary/10 mt-4 rounded-2xl border-2 p-8">
         <li>
           Предоплата:
           <span>
@@ -317,18 +317,28 @@ onBeforeMount(() => {
           </span>
         </li>
       </ul>
+
+      <p class="text-primary border-secondary mt-10 border-l-2 pl-4 font-semibold uppercase">
+        Рассчет стоимости
+      </p>
+
+      <p class="mt-4 opacity-50">
+        Стоимость услуг обработки определяется на основании технических требований к детали, включая
+        материал, сложность, объем и сроки. Для получения коммерческого предложения, просим
+        предоставить чертежи.
+      </p>
     </Container>
   </div>
 
   <!-- Form -->
-  <div id="section-form" class="py-10">
+  <div id="section-form" class="bg-surface py-10">
     <Container>
       <form
         id="email-send-form"
         @submit.prevent="submitForm"
-        class="rounded-2xl flex flex-col gap-4"
+        class="bg-background flex flex-col gap-4 rounded-2xl p-8"
       >
-        <h2 class="text-2xl font-bold text-foreground mb-4">Оставьте заявку</h2>
+        <h2 class="text-foreground mb-4 text-2xl font-bold">Оставьте заявку на обратную связь</h2>
 
         <input type="hidden" name="time" :value="new Date()" />
 
@@ -337,7 +347,7 @@ onBeforeMount(() => {
           type="text"
           name="name"
           placeholder="Ваше имя"
-          class="px-4 py-3 border border-foreground/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-background"
+          class="border-surface focus:ring-primary text-foreground bg-surface rounded-xl border px-4 py-3 transition-all duration-150 focus:ring-2 focus:outline-none"
           required
         />
 
@@ -346,7 +356,7 @@ onBeforeMount(() => {
           type="email"
           name="email"
           placeholder="Email"
-          class="px-4 py-3 border border-foreground/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-background"
+          class="border-durface focus:ring-primary text-foreground bg-surface border-surface rounded-xl border px-4 py-3 transition-all duration-150 focus:ring-2 focus:outline-none"
           required
         />
 
@@ -355,7 +365,7 @@ onBeforeMount(() => {
           type="phone"
           name="phone"
           placeholder="Телефон"
-          class="px-4 py-3 border border-foreground/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-background"
+          class="border-surface bg-surface focus:ring-primary text-foregroun rounded-xl px-4 py-3 transition-all duration-150 focus:ring-2 focus:outline-none"
         />
 
         <textarea
@@ -363,7 +373,7 @@ onBeforeMount(() => {
           name="message"
           rows="4"
           placeholder="Комментарий"
-          class="px-4 py-3 border border-foreground/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-150 text-foreground bg-background resize-none"
+          class="border-surface focus:ring-primary text-foreground bg-surface resize-none rounded-xl border px-4 py-3 transition-all duration-150 focus:ring-2 focus:outline-none"
           required
         ></textarea>
 
@@ -385,10 +395,10 @@ onBeforeMount(() => {
         <button
           :disabled="!isFormEnabled"
           type="submit"
-          class="mt-4 py-4 px-6 rounded-xl cursor-pointer bg-primary text-background font-semibold hover:bg-primary/90 active:bg-primary/70 transition-all duration-150 disabled:opacity-50 relative overflow-hidden disabled:pointer-events-none"
+          class="bg-primary text-background hover:bg-primary/90 active:bg-primary/70 relative mt-4 cursor-pointer overflow-hidden rounded-xl px-6 py-4 font-semibold transition-all duration-150 disabled:pointer-events-none disabled:opacity-50"
         >
           <div
-            class="absolute top-0 left-0 right-0 bottom-0 group-hover:bg-background/20 transition-all duration-150 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40"
+            class="group-hover:bg-background/20 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40 absolute top-0 right-0 bottom-0 left-0 transition-all duration-150"
           ></div>
           Отправить
         </button>

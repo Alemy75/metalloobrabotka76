@@ -13,3 +13,21 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1440px;
 }
+
+.m-scrollbar {
+  scrollbar-width: 0;
+  scrollbar-color: transparent; /* thumb, track */
+}
+
+.m-scrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
+.m-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.m-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0;
+}
