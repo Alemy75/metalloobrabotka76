@@ -23,7 +23,7 @@ const inputProps = computed(() => {
 </script>
 
 <template>
-  <label class="flex items-center cursor-pointer select-none space-x-2" :class="class">
+  <label class="flex cursor-pointer items-center space-x-2 select-none" :class="class">
     <div class="relative">
       <input
         type="checkbox"
@@ -34,11 +34,11 @@ const inputProps = computed(() => {
       />
 
       <div
-        class="w-5 h-5 flex items-center justify-center border-2 border-foreground/10 rounded transition-colors duration-150 peer-checked:border-primary peer-checked:bg-primary peer-hover:border-primary/70"
+        class="border-surface peer-checked:border-primary peer-checked:bg-primary peer-hover:border-primary/70 flex h-5 w-5 items-center justify-center rounded border-2 transition-colors duration-150"
       ></div>
 
       <svg
-        class="w-4 h-4 text-background opacity-0 peer-checked:opacity-100 absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] transition duration-300"
+        class="text-background absolute top-1/2 left-1/2 h-4 w-4 translate-x-[-50%] translate-y-[-50%] opacity-0 transition duration-300 peer-checked:opacity-100"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"

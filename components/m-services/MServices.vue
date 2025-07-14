@@ -408,7 +408,7 @@ const tab = ref<Tabs>('tokarniye')
       <section v-show="tab === 'shlifovalniye'">
         <h2 class="border-secondary border-l-2 pl-4 text-xl font-semibold">Шлифовальные работы</h2>
 
-        <h3 class="mt-10 text-xl font-semibold">Финальный штрих к совершенству детали</h3>
+        <h3 class="mt-4 text-xl font-semibold">Финальный штрих к совершенству детали</h3>
 
         <p class="mt-4">
           Шлифовальная обработка – это не просто механическое воздействие, это искусство доведения

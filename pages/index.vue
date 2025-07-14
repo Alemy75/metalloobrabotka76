@@ -14,14 +14,16 @@ import b7 from '~/assets/img/bench-7.webp'
 import b8 from '~/assets/img/bench-8.webp'
 import b9 from '~/assets/img/bench-9.webp'
 
-import emailjs from '@emailjs/browser'
-
 /* Meat */
 useHead({
   title: 'Металообработка | Ярослвль',
   meta: [
     { name: 'description', content: 'Полный спектр услуг обработки металла' },
-    { name: 'keywords', content: 'металообработка' },
+    {
+      name: 'keywords',
+      content:
+        'металообработка, фрезерные работы, электроэрозионная обработка, термическая обработка, координатно-расточные работы, шлифовальные работы, долбёжная обраотка',
+    },
     { name: 'author', content: 'ООО "Лазер"' },
     { name: 'robots', content: 'index, follow' },
     { property: 'og:title', content: 'Металообработка в Ярославле' },
@@ -30,11 +32,6 @@ useHead({
   ],
   link: [{ rel: 'icon', type: 'image/png', href: '/favicon.svg' }],
 })
-
-/* Consts */
-const SERVICE_ID = 'service_dsl8mnn'
-const TEMPLATE_ID = 'template_c7vus8j'
-const PUBLIC_KEY = 'riBBNhcORYSnk6fcf'
 
 const HERO_SLIDES = [
   { id: 1, img: m1 },
@@ -58,42 +55,6 @@ const ABOUT_SLIDES = [
 
 const aboutSwiperRef = ref()
 const aboutSwiper = useSwiper(aboutSwiperRef)
-
-const formFields = reactive({
-  email: '',
-  name: '',
-  message: '',
-  phone: '',
-  personalData: false,
-})
-
-const isFormEnabled = computed(() => {
-  return (
-    formFields.personalData &&
-    [formFields.email, formFields.name, formFields.phone, formFields.message].every(e => e.length)
-  )
-})
-
-function submitForm() {
-  emailjs
-    .sendForm(SERVICE_ID, TEMPLATE_ID, '#email-send-form', {
-      publicKey: PUBLIC_KEY,
-    })
-    .then(
-      () => {
-        alert('Сообщение отправлено!')
-      },
-      error => {
-        console.error(error)
-      }
-    )
-}
-
-onBeforeMount(() => {
-  emailjs.init({
-    publicKey: PUBLIC_KEY,
-  })
-})
 </script>
 
 <template>
@@ -201,7 +162,7 @@ onBeforeMount(() => {
     </Container>
   </div>
 
-  <div class="border-b-foreground/2 border-b-0">
+  <div>
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Наши услуги</h2>
 
@@ -333,76 +294,7 @@ onBeforeMount(() => {
   <!-- Form -->
   <div id="section-form" class="bg-surface py-10">
     <Container>
-      <form
-        id="email-send-form"
-        @submit.prevent="submitForm"
-        class="bg-background flex flex-col gap-4 rounded-2xl p-8"
-      >
-        <h2 class="text-foreground mb-4 text-2xl font-bold">Оставьте заявку на обратную связь</h2>
-
-        <input type="hidden" name="time" :value="new Date()" />
-
-        <input
-          v-model="formFields.name"
-          type="text"
-          name="name"
-          placeholder="Ваше имя"
-          class="border-surface focus:ring-primary text-foreground bg-surface rounded-xl border px-4 py-3 transition-all duration-150 focus:ring-2 focus:outline-none"
-          required
-        />
-
-        <input
-          v-model="formFields.email"
-          type="email"
-          name="email"
-          placeholder="Email"
-          class="border-durface focus:ring-primary text-foreground bg-surface border-surface rounded-xl border px-4 py-3 transition-all duration-150 focus:ring-2 focus:outline-none"
-          required
-        />
-
-        <input
-          v-model="formFields.phone"
-          type="phone"
-          name="phone"
-          placeholder="Телефон"
-          class="border-surface bg-surface focus:ring-primary text-foregroun rounded-xl px-4 py-3 transition-all duration-150 focus:ring-2 focus:outline-none"
-        />
-
-        <textarea
-          v-model="formFields.message"
-          name="message"
-          rows="4"
-          placeholder="Комментарий"
-          class="border-surface focus:ring-primary text-foreground bg-surface resize-none rounded-xl border px-4 py-3 transition-all duration-150 focus:ring-2 focus:outline-none"
-          required
-        ></textarea>
-
-        <!-- <label class="flex items-start gap-2 text-sm text-foreground">
-          <input
-            v-model="formFields.personalData"
-            type="checkbox"
-            name="consent"
-            required
-            class="mt-1 accent-primary"
-          />
-          <span>Я согласен на обработку персональных данных</span>
-        </label> -->
-
-        <MCheckbox v-model="formFields.personalData" required>
-          Я согласен на обработку персональных данных
-        </MCheckbox>
-
-        <button
-          :disabled="!isFormEnabled"
-          type="submit"
-          class="bg-primary text-background hover:bg-primary/90 active:bg-primary/70 relative mt-4 cursor-pointer overflow-hidden rounded-xl px-6 py-4 font-semibold transition-all duration-150 disabled:pointer-events-none disabled:opacity-50"
-        >
-          <div
-            class="group-hover:bg-background/20 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40 absolute top-0 right-0 bottom-0 left-0 transition-all duration-150"
-          ></div>
-          Отправить
-        </button>
-      </form>
+      <MForm />
     </Container>
   </div>
 </template>
