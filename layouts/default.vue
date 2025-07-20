@@ -50,7 +50,7 @@ const LINKS = [
         class="hover:border-b-secondary border-b-2 border-b-transparent py-[2px] font-medium transition-all duration-150"
         :class="{ 'text-secondary': route.hash === item.id }"
       >
-        <a :href="item.id">{{ item.title }}</a>
+        <a :href="item.id" @click="isMenuVisible = false">{{ item.title }}</a>
       </li>
     </ul>
   </div>

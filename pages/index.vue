@@ -68,7 +68,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
         <div
           class="bg-gradient-black/80 inline-flex h-full flex-col justify-center p-12 shadow-black max-lg:w-full max-lg:text-center"
         >
-          <h2 class="text-background text-5xl font-bold uppercase max-lg:text-3xl">
+          <h2 class="text-background text-5xl font-bold uppercase max-lg:text-xl">
             Металлообработка
           </h2>
 
