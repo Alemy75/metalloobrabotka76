@@ -49,12 +49,12 @@ const tab = ref<Tabs>('tokarniye')
 <template>
   <div class="mt-10 flex items-stretch gap-4 max-lg:flex-col max-lg:items-start">
     <div
-      class="border-r-foreground/20 m-scrollbar flex w-[200px] shrink-0 flex-col gap-1 border-r-1 pr-4 max-lg:w-full max-lg:flex-row max-lg:items-center max-lg:overflow-y-auto max-lg:border-r-0 max-lg:pr-0"
+      class="border-r-foreground/20 m-scrollbar flex w-[300px] shrink-0 flex-col gap-1 border-r-1 pr-4 max-lg:w-full max-lg:flex-row max-lg:items-center max-lg:overflow-y-auto max-lg:border-r-0 max-lg:pr-0"
     >
       <span
         v-for="item in TABS"
         :key="item.id"
-        class="hover hover:bg-secondary/20 bg-surface block shrink-0 cursor-pointer rounded-lg px-4 py-2 transition-all duration-150"
+        class="hover hover:bg-secondary/20 bg-surface block shrink-0 cursor-pointer rounded-lg px-6 py-4 text-xl font-medium transition-all duration-150"
         :class="{ 'bg-secondary! text-background hover:bg-secondary!': tab === item.id }"
         @click="tab = item.id"
         >{{ item.name }}</span

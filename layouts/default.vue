@@ -1,18 +1,77 @@
 <script lang="ts" setup>
 import WhatsApp from '~/assets/img/whatsapp-icon.svg'
+
+const route = useRoute()
+const isMenuVisible = ref(false)
+
+const LINKS = [
+  {
+    id: '#section-main',
+    title: 'Главная',
+  },
+  {
+    id: '#section-about',
+    title: 'О компании',
+  },
+  {
+    id: '#section-service',
+    title: 'Услуги',
+  },
+  {
+    id: '#section-ship',
+    title: 'Доставка',
+  },
+  {
+    id: '#section-payment',
+    title: 'Оплата',
+  },
+  {
+    id: '#section-contacts',
+    title: 'Контакты',
+  },
+]
 </script>
 
 <template>
+  <div
+    class="bg-background fixed top-0 left-0 z-100 h-full w-full overflow-y-auto p-4 transition-all duration-500"
+    :class="{ '-translate-x-full': !isMenuVisible }"
+  >
+    <h2 class="text-xl font-semibold">Навигация по сайту</h2>
+
+    <button class="absolute top-4 right-4 cursor-pointer" @click="isMenuVisible = false">
+      <LucideX />
+    </button>
+
+    <ul class="mt-4 flex w-full flex-col items-start gap-1">
+      <li
+        v-for="item in LINKS"
+        :key="item.id"
+        class="hover:border-b-secondary border-b-2 border-b-transparent py-[2px] font-medium transition-all duration-150"
+        :class="{ 'text-secondary': route.hash === item.id }"
+      >
+        <a :href="item.id">{{ item.title }}</a>
+      </li>
+    </ul>
+  </div>
+
   <div>
     <div class="border-foreground/20 bg-background fixed top-0 right-0 left-0 z-50 h-14 border-b-1">
       <Container class="flex h-full items-center justify-between gap-4">
-        <h1 class="text-primary">Метлообработка в г. Ярославль</h1>
-
-        <span class="flex items-center gap-4">
-          <a href="#section-contacts" class="text-primary underline-offset-4 hover:underline"
-            >Контакты</a
+        <ul class="flex w-full items-center justify-center gap-4 max-sm:hidden">
+          <li
+            v-for="item in LINKS"
+            :key="item.id"
+            class="hover:border-b-secondary border-b-2 border-b-transparent py-[2px] font-medium transition-all duration-150"
+            :class="{ 'text-secondary': route.hash === item.id }"
           >
-        </span>
+            <a :href="item.id">{{ item.title }}</a>
+          </li>
+        </ul>
+
+        <button class="ml-auto cursor-pointer sm:hidden" @click="isMenuVisible = true">
+          <LucideMenu />
+        </button>
       </Container>
     </div>
 

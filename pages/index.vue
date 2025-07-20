@@ -60,17 +60,19 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
 <template>
   <!-- Hero -->
   <div
-    class="from-secondary/80 to-primary/80 relative mt-14 h-[calc(100vh-56px)] overflow-hidden bg-gradient-to-br"
+    id="section-main"
+    class="bg-gradient-black/80 relative mt-14 h-[calc(100vh-56px)] scroll-mt-14 overflow-hidden"
   >
-    <div
-      class="from-secondary/80 to-primary/80 absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-br"
-    >
-      <Container class="flex h-full items-center">
-        <div class="flex w-1/2 flex-col justify-center max-lg:w-full max-lg:text-center">
+    <div class="absolute top-0 left-0 z-10 h-full w-full">
+      <Container class="ite flex h-full items-center">
+        <div
+          class="bg-gradient-black/80 inline-flex h-full flex-col justify-center p-12 shadow-black max-lg:w-full max-lg:text-center"
+        >
           <h2 class="text-background text-5xl font-bold uppercase max-lg:text-3xl">
-            Металообработка
+            Металлообработка
           </h2>
-          <p class="text-background mt-4">
+
+          <p class="text-background mt-4 max-w-[500px]">
             Мы занимаемся обработкой металлов и предлагаем полный спектр услуг в этой области. У нас
             работают опытные специалисты, и мы используем современное оборудование. Мы гарантируем
             высокое качество нашей работы и выполняем заказы любой сложности быстро и эффективно.
@@ -78,7 +80,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
 
           <a
             href="#section-form"
-            class="text-background bg-secondary group relative mt-4 flex max-w-[200px] cursor-pointer justify-center overflow-hidden rounded-xl px-6 py-4 font-semibold transition-all duration-150 disabled:opacity-50 max-lg:max-w-full"
+            class="text-background bg-secondary group relative mt-4 flex max-w-full cursor-pointer justify-center overflow-hidden rounded-xl px-6 py-4 font-semibold transition-all duration-150 disabled:opacity-50"
           >
             <div
               class="group-hover:bg-background/20 focus-visible:bg-background/20 focus:bg-background/20 active:bg-background/40 absolute top-0 right-0 bottom-0 left-0 transition-all duration-150"
@@ -101,7 +103,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
     </swiper-container>
   </div>
   <!-- About -->
-  <div class="bg-surface">
+  <div id="section-about" class="bg-surface scroll-mt-14">
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Технологическая компания</h2>
 
@@ -162,7 +164,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
     </Container>
   </div>
 
-  <div>
+  <div id="section-service" class="scroll-mt-14">
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Наши услуги</h2>
 
@@ -171,7 +173,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
   </div>
 
   <!-- Ship -->
-  <div class="bg-surface">
+  <div id="section-ship" class="bg-surface scroll-mt-14">
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Варианты доставки</h2>
 
@@ -202,8 +204,8 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
       </div>
     </Container>
   </div>
-  <!-- Pay -->
-  <div>
+  <!-- Payment -->
+  <div id="section-payment" class="scroll-mt-14">
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Оплата заказа</h2>
 

@@ -6,6 +6,7 @@
   --color-surface: rgb(249, 250, 251);
   --color-foreground: rgb(31, 41, 55);
   --color-background: rgb(255, 255, 255);
+  --color-gradient-black: rgb(0, 0, 0);
 
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
