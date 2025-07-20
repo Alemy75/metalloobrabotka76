@@ -80,7 +80,7 @@ const LINKS = [
     </div>
 
     <!-- Footer -->
-    <footer id="section-contacts" class="py-10">
+    <footer id="section-contacts" class="scroll-mt-14 py-10">
       <Container>
         <div class="mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <!-- Контакты -->

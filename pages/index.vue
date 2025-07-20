@@ -294,7 +294,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
   </div>
 
   <!-- Form -->
-  <div id="section-form" class="bg-surface py-10">
+  <div id="section-form" class="bg-surface scroll-mt-14 py-10">
     <Container>
       <MForm />
     </Container>
