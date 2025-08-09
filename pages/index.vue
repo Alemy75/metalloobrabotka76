@@ -173,6 +173,57 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
   </div>
 
   <!-- Ship -->
+  <div id="section-advantages" class="bg-surface scroll-mt-14">
+    <Container class="py-10">
+      <h2 class="w-full text-center text-2xl font-bold">Наши преимущества</h2>
+
+      <div class="mt-10 grid grid-cols-2 grid-rows-2 gap-4 max-lg:grid-cols-1">
+        <div
+          class="bg-background border-secondary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
+        >
+          <h3 class="text-primary font-semibold uppercase">Индивидуальный подход</h3>
+          <p>
+            Мы глубоко погружаемся в специфику вашего производства, чтобы предложить наиболее
+            эффективные решения.
+          </p>
+        </div>
+
+        <div
+          class="bg-background border-secondary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
+        >
+          <h3 class="text-primary font-semibold uppercase">
+            Современные технологии проектирования:
+          </h3>
+          <p>
+            Используем передовое программное обеспечение для 3D-моделирования и прочностных
+            расчетов.
+          </p>
+        </div>
+
+        <div
+          class="bg-background border-secondary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
+        >
+          <h3 class="text-primary font-semibold uppercase">Опыт и экспертиза</h3>
+          <p>
+            Наша команда состоит из высококвалифицированных инженеров с многолетним опытом в области
+            проектирования оснастки.
+          </p>
+        </div>
+
+        <div
+          class="bg-background border-secondary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
+        >
+          <h3 class="text-primary font-semibold uppercase">Оптимизация затрат:</h3>
+          <p>
+            Мы стремимся предложить решения, которые не только повысят производительность, но и
+            будут экономически выгодны для вашего предприятия
+          </p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Ship -->
   <div id="section-ship" class="bg-surface scroll-mt-14">
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Варианты доставки</h2>

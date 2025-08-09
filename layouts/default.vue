@@ -18,6 +18,10 @@ const LINKS = [
     title: 'Услуги',
   },
   {
+    id: '#section-advantages',
+    title: 'Преимущества',
+  },
+  {
     id: '#section-ship',
     title: 'Доставка',
   },
