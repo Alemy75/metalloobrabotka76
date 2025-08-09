@@ -13,6 +13,12 @@ import b6 from '~/assets/img/bench-6.webp'
 import b7 from '~/assets/img/bench-7.webp'
 import b8 from '~/assets/img/bench-8.webp'
 import b9 from '~/assets/img/bench-9.webp'
+import b10 from '~/assets/img/bench-10.webp'
+import b11 from '~/assets/img/bench-11.webp'
+import b12 from '~/assets/img/bench-12.webp'
+import b13 from '~/assets/img/bench-13.webp'
+import b14 from '~/assets/img/bench-14.webp'
+import b15 from '~/assets/img/bench-15.webp'
 
 /* Meat */
 useHead({
@@ -42,6 +48,12 @@ const HERO_SLIDES = [
 ]
 
 const ABOUT_SLIDES = [
+  { id: 10, img: b10 },
+  { id: 11, img: b11 },
+  { id: 12, img: b12 },
+  { id: 13, img: b13 },
+  { id: 14, img: b14 },
+  { id: 15, img: b15 },
   { id: 1, img: b1 },
   { id: 2, img: b2 },
   { id: 3, img: b3 },
@@ -164,6 +176,64 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
     </Container>
   </div>
 
+  <!-- Advantages -->
+  <div id="section-advantages" class="bg-surface scroll-mt-14">
+    <Container class="py-10">
+      <h2 class="w-full text-center text-2xl font-bold">Оборудование</h2>
+
+      <p class="my-10">
+        В основе нашего производства лежит использование передового высокотехнологичного
+        оборудования, обеспечивающего высокое качество и точность изготавливаемых изделий. Мы
+        применяем:
+      </p>
+
+      <div class="mt-10 grid grid-cols-2 grid-rows-2 gap-4 max-lg:grid-cols-1">
+        <div
+          class="bg-background border-primary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
+        >
+          <h3 class="text-primary font-semibold uppercase">
+            3-координатные станки с ЧПУ VMC60C и VMC650
+          </h3>
+          <p>
+            Эти станки позволяют выполнять широкий спектр операций по фрезерованию и сверлению с
+            высокой степенью автоматизации.
+          </p>
+        </div>
+
+        <div
+          class="bg-background border-primary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
+        >
+          <h3 class="text-primary font-semibold uppercase">5-координатный станок с ЧПУ CT350</h3>
+          <p>
+            Данное оборудование обеспечивает возможность обработки деталей со сложной геометрией в
+            пяти плоскостях, что значительно расширяет наши производственные возможности.
+          </p>
+        </div>
+
+        <div
+          class="bg-background border-primary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
+        >
+          <h3 class="text-primary font-semibold uppercase">
+            Ленточнопильный станок CUT -300х500CSA
+          </h3>
+          <p>
+            Предназначен для точного и эффективного распила различных материалов с максимальной
+            длиной реза до 500 мм.
+          </p>
+        </div>
+
+        <div
+          class="bg-background border-primary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
+        >
+          <h3 class="text-primary font-semibold uppercase">Плоскошлифовальный станок 3Л722А</h3>
+          <p>
+            Используется для достижения высокой чистоты и точности обработки плоских поверхностей.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
   <div id="section-service" class="scroll-mt-14">
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Наши услуги</h2>
@@ -172,7 +242,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
     </Container>
   </div>
 
-  <!-- Ship -->
+  <!-- Advantages -->
   <div id="section-advantages" class="bg-surface scroll-mt-14">
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Наши преимущества</h2>
