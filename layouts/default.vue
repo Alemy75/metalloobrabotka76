@@ -14,6 +14,10 @@ const LINKS = [
     title: 'О компании',
   },
   {
+    id: '#section-benches',
+    title: 'Оборудование',
+  },
+  {
     id: '#section-service',
     title: 'Услуги',
   },
@@ -62,7 +66,7 @@ const LINKS = [
   <div>
     <div class="border-foreground/20 bg-background fixed top-0 right-0 left-0 z-50 h-14 border-b-1">
       <Container class="flex h-full items-center justify-between gap-4">
-        <ul class="flex w-full items-center justify-center gap-4 max-sm:hidden">
+        <ul class="flex w-full items-center justify-center gap-4 max-lg:hidden">
           <li
             v-for="item in LINKS"
             :key="item.id"
@@ -73,7 +77,7 @@ const LINKS = [
           </li>
         </ul>
 
-        <button class="ml-auto cursor-pointer sm:hidden" @click="isMenuVisible = true">
+        <button class="ml-auto cursor-pointer lg:hidden" @click="isMenuVisible = true">
           <LucideMenu />
         </button>
       </Container>

@@ -177,7 +177,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
   </div>
 
   <!-- Advantages -->
-  <div id="section-advantages" class="bg-surface scroll-mt-14">
+  <div id="section-benches" class="bg-surface scroll-mt-14">
     <Container class="py-10">
       <h2 class="w-full text-center text-2xl font-bold">Оборудование</h2>
 
@@ -262,7 +262,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
           class="bg-background border-secondary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
         >
           <h3 class="text-primary font-semibold uppercase">
-            Современные технологии проектирования:
+            Современные технологии проектирования
           </h3>
           <p>
             Используем передовое программное обеспечение для 3D-моделирования и прочностных
@@ -283,10 +283,10 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
         <div
           class="bg-background border-secondary flex flex-col gap-4 rounded-2xl border-l-8 p-8 shadow-2xl"
         >
-          <h3 class="text-primary font-semibold uppercase">Оптимизация затрат:</h3>
+          <h3 class="text-primary font-semibold uppercase">Оптимизация затрат</h3>
           <p>
             Мы стремимся предложить решения, которые не только повысят производительность, но и
-            будут экономически выгодны для вашего предприятия
+            будут экономически выгодны для вашего предприятия.
           </p>
         </div>
       </div>
