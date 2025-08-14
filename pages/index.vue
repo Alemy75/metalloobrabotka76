@@ -75,10 +75,10 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
     id="section-main"
     class="bg-gradient-black/80 relative mt-14 h-[calc(100vh-56px)] scroll-mt-14 overflow-hidden"
   >
-    <div class="absolute top-0 left-0 z-10 h-full w-full">
+    <div class="absolute top-0 left-0 z-10 h-full w-full bg-gradient-black/60 ">
       <Container class="ite flex h-full items-center">
         <div
-          class="bg-gradient-black/80 inline-flex h-full flex-col justify-center p-12 shadow-black max-lg:w-full max-lg:text-center"
+          class="inline-flex h-full flex-col justify-center p-12 shadow-black max-lg:w-full max-lg:text-center"
         >
           <h2 class="text-background text-5xl font-bold uppercase max-lg:text-xl">
             Металлообработка
@@ -305,8 +305,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
           <h3 class="text-primary text-center font-semibold uppercase">
             Самовывоз со склада в Ярославле
           </h3>
-          Вы можете забрать заказ самостоятельно с нашего склада по адресу: г. Ярославль, Троицкий
-          тракт, 9/6. Склад работает с понедельника по пятницу с 7:00 до 16:00. В выходные — субботу
+          Вы можете забрать заказ самостоятельно с нашего склада по адресу: г. Ярославль, ул Гагарина 64, строение 2. Склад работает с понедельника по пятницу с 7:00 до 16:00. В выходные — субботу
           и воскресенье — склад закрыт. Перед приездом рекомендуем уточнить готовность заказа у
           менеджера.
         </div>
@@ -350,6 +349,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
           <div class="text-primary text-center font-semibold uppercase">
             Позвоните в офис
             <div class="text-secondary">ООО"Лазер"</div>
+            <span>8 (4852) 73-70-88</span>
           </div>
         </a>
 
@@ -363,6 +363,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
           <div class="text-primary text-center font-semibold uppercase">
             Напишите нам на
             <div class="text-secondary">электронную почту</div>
+            <span class="normal-case">L737088@yandex.ru</span>
           </div>
         </a>
 
