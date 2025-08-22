@@ -97,11 +97,11 @@ const LINKS = [
             <p>Кириченко Геннадий Александрович</p>
             <p class="mt-2">
               Телефон:<br />
-              <a href="tel:+79038265241" class="text-primary underline-offset-4 hover:underline"
-                >+7 (903) 826-52-41</a
+              <a href="tel:88006001046" class="text-primary underline-offset-4 hover:underline"
+                >8 (800) 600-10-46</a
               ><br />
-              <a href="tel:+74852737088" class="text-primary underline-offset-4 hover:underline"
-                >8 (4852) 73-70-88</a
+              <a href="tel:89038265241" class="text-primary underline-offset-4 hover:underline"
+                >8 (903) 826-52-41</a
               >
             </p>
             <p class="mt-2">

@@ -73,9 +73,9 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
   <!-- Hero -->
   <div
     id="section-main"
-    class="bg-gradient-black/80 relative mt-14 h-[calc(100vh-56px)] scroll-mt-14 overflow-hidden"
+    class="bg-black/25 relative mt-14 h-[calc(100vh-56px)] scroll-mt-14 overflow-hidden"
   >
-    <div class="absolute top-0 left-0 z-10 h-full w-full bg-gradient-black/60 ">
+    <div class="absolute top-0 left-0 z-10 h-full w-full bg-black/25">
       <Container class="ite flex h-full items-center">
         <div
           class="inline-flex h-full flex-col justify-center p-12 shadow-black max-lg:w-full max-lg:text-center"
@@ -340,8 +340,8 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
 
       <div class="mt-4 grid grid-cols-3 gap-4 max-lg:grid-cols-1">
         <a
-          href="tel:84852737088"
-          title="8 (4852) 73-70-88"
+          href="tel:88006001046"
+          title="8 (800) 600-10-46"
           class="bg-background border-primary/10 hover:border-secondary/50 flex flex-col items-center gap-4 rounded-2xl border-2 px-4 py-8 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
         >
           <LucidePhoneCall :size="40" class="text-secondary" />
@@ -349,13 +349,14 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
           <div class="text-primary text-center font-semibold uppercase">
             Позвоните в офис
             <div class="text-secondary">ООО"Лазер"</div>
-            <span>8 (4852) 73-70-88</span>
+            <div>8 (800) 600-10-46</div>
+            <div>8 (903) 826-52-41</div>
           </div>
         </a>
 
         <a
-          href="mailto:L737088@yandex.ru"
-          title="L737088@yandex.ru"
+          href="mailto:zmk15@yandex.ru"
+          title="zmk15@yandex.ru"
           class="bg-background border-primary/10 hover:border-secondary/50 flex flex-col items-center gap-4 rounded-2xl border-2 px-4 py-8 transition-all duration-200 hover:translate-y-[-4px] hover:shadow-2xl"
         >
           <LucideMail :size="40" class="text-secondary" />
@@ -363,7 +364,7 @@ const aboutSwiper = useSwiper(aboutSwiperRef)
           <div class="text-primary text-center font-semibold uppercase">
             Напишите нам на
             <div class="text-secondary">электронную почту</div>
-            <span class="normal-case">L737088@yandex.ru</span>
+            <span class="normal-case">zmk15@yandex.ru</span>
           </div>
         </a>
 
